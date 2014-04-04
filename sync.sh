@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -aziv --delete dist/ spacegateNG:/var/www/
+rsync -aziv --delete dist/ spacegate:/var/www/
