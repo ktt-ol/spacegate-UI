@@ -1,0 +1,95 @@
+.headMenu .brand {
+  margin-left: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+footer {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* progress bars */
+.speed-bar {
+  width: 150px;
+  margin-bottom: 0px;
+}
+
+.speed-bar__label {
+  min-width: 150px;
+  float: left;
+  text-align: left;
+  padding: 0 15px;
+}
+
+.progress-bar_low .speed-bar__label {
+  color: #000000;
+  text-align: right;
+}
+
+.speed-bar-legend {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+  margin: 0 5px;
+}
+
+.gage {
+  height: 150px;
+}
+
+/* loading indicator */
+.bowlG{
+  position:relative;
+  width:28px;
+  height:28px;
+  display: none;
+}
+.bowlG.run {
+  display: block;
+}
+
+.bowl_ringG{
+  position:absolute;
+  width:28px;
+  height:28px;
+  border:2px solid #000000;
+  border-radius:28px;
+  box-sizing: content-box;
+}
+
+.ball_holderG{
+  position:absolute;
+  width:7px;
+  height:28px;
+  left:10px;
+  top:0px;
+}
+.bowlG.run .ball_holderG {
+  animation-name: ball_moveG;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.ballG{
+  position:absolute;
+  left:0px;
+  top:-7px;
+  width:11px;
+  height:11px;
+  background:#5599FF;
+  border-radius:9px;
+}
+
+@keyframes ball_moveG{
+  0%{
+    transform:rotate(0deg)}
+
+  100%{
+    transform:rotate(360deg)}
+
+}

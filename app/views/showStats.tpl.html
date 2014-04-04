@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th></th>
+        <th>in (Download)</th>
+        <th>out (Upload)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="info total-row">
+        <td>Total</td>
+        <td>
+            <speed-bar value="d.totalIn" max="maxRate.download" />
+        </td>
+        <td>
+            <speed-bar value="d.totalOut" max="maxRate.upload" />
+        </td>
+    </tr>
+    <tr ng-repeat="entry in d.perIp">
+        <td ng-if="entry.special">{{entry.special}}</td>
+        <td ng-if="!entry.special">x.x.x.{{entry.ip}}</td>
+        <td><speed-bar value="entry.bytesIn" max="relativeIpRate ? d.totalIn : maxRate.download" /></td>
+        <td><speed-bar value="entry.bytesOut" max="relativeIpRate ? d.totalOut : maxRate.upload" /></td>
+    </tr>
+    </tbody>
+</table>

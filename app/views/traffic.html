@@ -1,0 +1,74 @@
+<h2>Traffic Stats
+    <small>oder: Wer zieht hier p0rn?</small>
+    <div class="pull-right">
+        <next-update-indicator play="showMeters"></next-update-indicator>
+    </div>
+</h2>
+
+<p>Hier siehst du eine Live-Übersicht vom aktuellen Bandbreitenverbrauch. </p>
+
+<div ng-if="!showMeters">
+    <div class="alert alert-info">Waiting for connection...</div>
+</div>
+
+<div ng-if="connectionError">
+    <div class="alert alert-danger">Connection error. :( Please reload the page.</div>
+</div>
+
+<div ng-if="showMeters">
+
+    <h3>Now (last 10 sec.)</h3>
+
+    <div class="row">
+
+        <div class="col-xs-6">
+            <just-gage id="downNow" min="0" max="maxRate.download" title="Download" value="stats.now.totalIn"/>
+        </div>
+
+        <div class="col-xs-6">
+            <just-gage id="upNow" min="0" max="maxRate.upload" title="Upload" value="stats.now.totalOut"/>
+        </div>
+    </div>
+
+    <h3>Short history</h3>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h4>Last minute</h4>
+            <show-stats data="stats.short" max-rate="maxRate" relative-ip-rate="relativeIpRate"/>
+        </div>
+        <div class="col-md-6">
+            <h4>Last 10 minutes</h4>
+            <show-stats data="stats.long" max-rate="maxRate" relative-ip-rate="relativeIpRate"/>
+        </div>
+    </div>
+
+    <h3>Options</h3>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="relativeIpRate">
+                    Show ip rates as % of the current total?
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <h3>About</h3>
+
+    <p>
+        The bar uses the following maximum values: {{maxRate.download | human}}/s download, {{maxRate.upload | human}}/s upload.
+    </p>
+    <ul class="list-inline">
+        <li><span class="progress-bar-info speed-bar-legend"></span>0-25%</li>
+        <li><span class="progress-bar-success speed-bar-legend"></span>26-50%</li>
+        <li><span class="progress-bar-warning speed-bar-legend"></span>51-75%</li>
+        <li><span class="progress-bar-danger speed-bar-legend"></span>76-100%</li>
+    </ul>
+    <div class="row">
+    </div>
+</div>
