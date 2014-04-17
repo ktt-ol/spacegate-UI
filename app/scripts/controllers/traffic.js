@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spacegateUiApp').controller('TrafficCtrl',
-  function ($scope, $log) {
+  function ($scope, $log, $window) {
 
     $scope.showMeters = false;
     $scope.connectionError = false;
@@ -76,8 +76,7 @@ angular.module('spacegateUiApp').controller('TrafficCtrl',
 
 //    var source = new EventSource('http://localhost:1337');
 //    $scope.maxRate = 750000;
-    var source = new EventSource('http://192.168.2.1:1337');
-//    var source = new EventSource('http://192.168.178.254:1337');
+    var source = new EventSource('http://' + $window.location.host + ':1337/updates');
 
     source.onopen = function () {
       $scope.$apply(function () {
