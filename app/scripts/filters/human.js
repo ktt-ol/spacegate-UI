@@ -4,7 +4,7 @@ angular.module('spacegateUiApp').filter(
   'human', function ($filter) {
     var FRACTIONAL_DIGITS = 0;
     var KB = 1000;
-    var MB = 1000 * KB;
+//    var MB = 1000 * KB;
 
     function format(value) {
       return $filter('number')(value, FRACTIONAL_DIGITS).replace('.', ',');

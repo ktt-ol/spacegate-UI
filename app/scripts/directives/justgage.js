@@ -1,5 +1,7 @@
 'use strict';
 
+/* global JustGage:false */
+
 // code comes from https://github.com/mattlaver/angular-justgage/
 angular.module('spacegateUiApp').directive(
   'justGage', function ($timeout) {
@@ -27,7 +29,7 @@ angular.module('spacegateUiApp').directive(
 
           scope.$watch('value', function (updatedValue) {
             if (updatedValue) {
-              g.refresh(updatedValue)
+              g.refresh(updatedValue);
             }
           }, true);
         });

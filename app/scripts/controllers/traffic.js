@@ -23,7 +23,7 @@ angular.module('spacegateUiApp').controller('TrafficCtrl',
     function markSpecialIps(statsPerIp) {
       statsPerIp.forEach(function (item) {
         if (item.ip === 245) {
-          item.special = 'FF Pferdemarkt (.245)'
+          item.special = 'FF Pferdemarkt (.245)';
         } else if (item.ip === 246) {
           item.special = 'FF Lappan (.246)';
         } else if (item.ip === 247) {
@@ -39,7 +39,7 @@ angular.module('spacegateUiApp').controller('TrafficCtrl',
 
       var result = [], i;
 
-      for (var i = 0; i < detailsIn.length; i++) {
+      for (i = 0; i < detailsIn.length; i++) {
         if (detailsIn[i] === 0 && detailsOut[i] === 0) {
           continue;
         }
@@ -74,9 +74,8 @@ angular.module('spacegateUiApp').controller('TrafficCtrl',
       });
     }
 
-//    var source = new EventSource('http://localhost:1337');
-//    $scope.maxRate = 750000;
-    var source = new EventSource('http://' + $window.location.host + ':1337/updates');
+    var source = new window.EventSource('http://localhost:1337/updates');
+//    var source = new window.EventSource('http://' + $window.location.host + ':1337/updates');
 
     source.onopen = function () {
       $scope.$apply(function () {
