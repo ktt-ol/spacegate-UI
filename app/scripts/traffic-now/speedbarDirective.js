@@ -7,7 +7,7 @@ angular.module('spacegateUiApp').directive(
         value: '=',
         max: '='
       },
-      templateUrl: '../../views/sppedBar.tpl.html',
+      templateUrl: 'scripts/traffic-now/sppedBar.tpl.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         scope.barColor = '';
