@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spacegateUiApp').controller('TrafficCtrl',
-  function ($scope, $log, $window) {
+  function ($scope, $log, GlobalConfig) {
 
     $scope.showMeters = false;
     $scope.connectionError = false;
@@ -73,9 +73,8 @@ angular.module('spacegateUiApp').controller('TrafficCtrl',
         markSpecialIps(stats.perIp);
       });
     }
-
-    var source = new window.EventSource('http://localhost:1337/updates');
-//    var source = new window.EventSource('http://' + $window.location.host + ':1337/updates');
+    console.log('url:', GlobalConfig.serviceUrl);
+    var source = new window.EventSource(GlobalConfig.serviceUrl + 'updates');
 
     source.onopen = function () {
       $scope.$apply(function () {

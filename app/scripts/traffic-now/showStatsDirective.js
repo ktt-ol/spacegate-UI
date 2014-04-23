@@ -8,7 +8,7 @@ angular.module('spacegateUiApp').directive(
         maxRate: '=',
         relativeIpRate: '='
       },
-      templateUrl: 'views/showStats.tpl.html',
+      templateUrl: '../../views/showStats.tpl.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
 

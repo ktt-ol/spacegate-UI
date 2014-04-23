@@ -51,19 +51,24 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/raphael/raphael.js"></script>
-<script src="scripts/justgage/justgage.js"></script>
+<script src="scripts/common/justgage/justgage.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/traffic.js"></script>
-<script src="scripts/controllers/headmenu.js"></script>
-<script src="scripts/filters/human.js"></script>
-<script src="scripts/directives/showstats.js"></script>
-<script src="scripts/directives/speedbar.js"></script>
-<script src="scripts/directives/justgage.js"></script>
-<script src="scripts/directives/nextupdateindicator.js"></script>
+
+<script src="scripts/common/globalConfig.js"></script>
+<script src="scripts/common/humanFilter.js"></script>
+
+<script src="scripts/head/headMenuCtrl.js"></script>
+
+<script src="scripts/traffic-now/traffnowCtrl.js"></script>
+<script src="scripts/traffic-now/showStatsDirective.js"></script>
+<script src="scripts/traffic-now/speedbarDirective.js"></script>
+<script src="scripts/traffic-now/justgageDirective.js"></script>
+<script src="scripts/traffic-now/nextupdateindicatorDirective.js"></script>
+
+<script src="scripts/traffic-history/traffHistoryCtrl.js"></script>
 <!-- endbuild -->
 </body>
 </html>

@@ -7,12 +7,15 @@ angular.module('spacegateUiApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/main.html'
       })
-      .when('/traffic', {
-        templateUrl: 'views/traffic.html',
+      .when('/traffnow', {
+        templateUrl: 'views/traffnow.html',
         controller: 'TrafficCtrl'
+      })
+      .when('/traffhistory', {
+        templateUrl: 'views/traffhistory.html',
+        controller: 'TraffHistoryCtrl'
       })
       .otherwise({
         redirectTo: '/'
