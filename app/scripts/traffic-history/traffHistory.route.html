@@ -4,17 +4,17 @@
 
 <div class="row">
     <div class="col-xs-6">
-        <img ng-src="{{makeImgPath('now-1d')}}" class="thumbnail" />
+        <rrd-graph title="'Letzter Tag'" start="'now-1d'" size="rrdSize.preview" size-big="rrdSize.big"></rrd-graph>
     </div>
     <div class="col-xs-6">
-        <img ng-src="{{makeImgPath('now-3d')}}" class="thumbnail" />
+        <rrd-graph title="'Letzten 3 Tage'" start="'now-3d'" size="rrdSize.preview" size-big="rrdSize.big"></rrd-graph>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-6">
-        <img ng-src="{{makeImgPath('now-7d')}}" class="thumbnail" />
+        <rrd-graph title="'Letzte Woche'" start="'now-7d'" size="rrdSize.preview" size-big="rrdSize.big"></rrd-graph>
     </div>
     <div class="col-xs-6">
-        <img ng-src="{{makeImgPath('now-30d')}}" class="thumbnail" />
+        <rrd-graph title="'Letzter Monat'" start="'now-30d'" size="rrdSize.preview" size-big="rrdSize.big"></rrd-graph>
     </div>
 </div>
